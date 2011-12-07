@@ -1,0 +1,133 @@
+// Sizes for use as margin and paddings
+@su: 4px;
+@mu: 12px;
+@lu: 24px;
+
+// Grid
+@columnWidth: 48px;
+@gutterWidth: 24px;
+
+// Colors
+@textColor: #121212;
+@headingColor: #444;
+@linkColor: #1c525c;
+@linkHoverColor: lighten(#1c525c, 15%);
+@accentColor: lighten(#1c525c, 25%);
+@dashColor: #e0e0e0;
+
+@import 'reset.less';
+@import 'mixin.less';
+@import 'font.less';
+@import 'type.less';
+@import 'table.less';
+@import 'form.less';
+@import 'pygments.less';
+@import 'print.less';
+
+
+// Elements
+.box(@startColor: #f5f5f5, @endColor: #f0f0f0) {
+	.radius();
+	#gradient > .vertical(@startColor, @endColor);
+}
+
+.header {
+	.clearfix();
+	margin: 0;
+	border-bottom: 1px dashed @dashColor;
+
+	.main-nav {
+		margin: 0 auto;
+		.gridWidth(12);
+		.clearfix();
+		
+		a {
+			display: block;
+			padding: 0 @mu;
+			font-family: CabinSketchBold, Futura;
+			font-size: 1.6em;
+			line-height: 2 * @lu;
+			text-transform: uppercase;
+			border-right: 1px dashed @dashColor;
+
+			&:hover {
+				text-decoration: none;
+			}
+			&.site {
+				float: left;
+				padding: 0 @lu 0 ((@lu * 2) + @mu);
+				color: @accentColor;
+				border-right: 1px dashed @dashColor;
+				background: url('http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=48') no-repeat 0 0;
+			}
+		}
+		ul {
+			float: left;
+			display: block;
+			list-style: none;
+			margin: 0;
+
+			li {
+				float: left;
+			}
+		}
+	}
+}
+
+.container {
+	margin: 0 auto;
+	.gridWidth(12);
+}
+
+.main {
+	.row();
+}
+
+.content {
+	.gridColumn(8, -1px);
+	border-right: 1px dashed @dashColor;
+}
+	.post {
+		margin: @lu 0;
+
+		header {
+			border-top: 1px dashed @dashColor;
+
+			.post-image {
+				display: block;
+				margin: -1px 0 0 0;
+			}
+			.post-date {
+				display: block;
+				width: 108px;
+				margin: -1px 0 @mu -@lu;
+				padding-left: @mu;
+				background: @dashColor;
+				font-family: CabinSketchRegular, Futura, 'Century Gothic', AppleGothic, sans-serif;
+				line-height: 28px;
+				color: #000;
+				.radius(2px);
+			}
+			.post-image+.post-date {
+				width: auto;
+			}
+		}
+		.body {
+			padding: 0 @lu 0 0;
+			max-width: 512px;
+		}
+	}
+
+.aside {
+	.gridColumn(4);
+	margin-top: @lu;
+	margin-bottom: @lu;
+	min-height: 300px;
+}
+
+.footer {
+	.gridWidth(12, @lu);
+	border: 1px dashed @dashColor;
+	border-bottom: 0;
+	line-height: @mu * 3;
+}

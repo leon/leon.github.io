@@ -1,0 +1,12 @@
+# Jekyll settings
+permalink: /:categories/:year/:month/:title/
+lsi: false
+pygments: true
+auto: true
+exclude: ["README.md", "LICENSE.md", "TODO.md", "build", "test"]
+
+# Site settings
+url: http://www.radley.se
+title: Leon Radley
+author: Leon Radley
+simple_search: http://google.com/search
