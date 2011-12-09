@@ -1,9 +1,9 @@
 # Jekyll settings
 permalink: /:categories/:year/:month/:title/
-lsi: false
 pygments: true
-auto: true
-exclude: ["README.md", "LICENSE.md", "TODO.md", "build", "test"]
+markdown: rdiscount
+
+exclude: ["README.md", "LICENSE.md", "Gemfile", "Gemfile.lock"]
 
 # Site settings
 url: http://www.radley.se
