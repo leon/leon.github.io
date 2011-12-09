@@ -1,29 +1,12 @@
-// Sizes for use as margin and paddings
-@su: 4px;
-@mu: 12px;
-@lu: 24px;
-
-// Grid
-@columnWidth: 48px;
-@gutterWidth: 24px;
-
-// Colors
-@textColor: #121212;
-@headingColor: #444;
-@linkColor: #1c525c;
-@linkHoverColor: lighten(#1c525c, 15%);
-@accentColor: lighten(#1c525c, 25%);
-@dashColor: #e0e0e0;
-
-@import 'reset.less';
-@import 'mixin.less';
-@import 'font.less';
-@import 'type.less';
-@import 'table.less';
-@import 'form.less';
-@import 'pygments.less';
-@import 'print.less';
-
+@import "variables";
+@import "reset";
+@import "mixin";
+@import "font";
+@import "type";
+@import "table";
+@import "form";
+@import "pygments";
+@import "print";
 
 // Elements
 .box(@startColor: #f5f5f5, @endColor: #f0f0f0) {
@@ -58,7 +41,7 @@
 				padding: 0 @lu 0 ((@lu * 2) + @mu);
 				color: @accentColor;
 				border-right: 1px dashed @dashColor;
-				background: url('http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=48') no-repeat 0 0;
+				background: url("http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=48") no-repeat 0 0;
 			}
 		}
 		ul {
@@ -103,7 +86,7 @@
 				margin: -1px 0 @mu -@lu;
 				padding-left: @mu;
 				background: @dashColor;
-				font-family: CabinSketchRegular, Futura, 'Century Gothic', AppleGothic, sans-serif;
+				font-family: CabinSketchRegular, Futura, "Century Gothic", AppleGothic, sans-serif;
 				line-height: 28px;
 				color: #000;
 				.radius(2px);
