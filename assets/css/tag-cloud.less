@@ -1,0 +1,16 @@
+.tag-cloud {
+	margin: @lu 0;
+	list-style: none;
+	display: block;
+	li {
+		display: inline-block;
+		a {
+			display: inline-block;
+			.transition(color .3s ease-in);
+			&:hover {
+				color: @linkHoverColor;
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.teaser {
+	a {
+		display: block;
+		color: @textColor;
+
+		&:hover {
+			text-decoration: none;
+			h1 {
+				color: @accentColor;
+			}
+		}
+	}
+		header {
+			border-top: 1px dashed @dashColor;
+			img {
+				float: left;
+				display: inline;
+				max-width: @lu * 6;
+				margin: (@lu + @mu) @mu @mu 0;
+			}
+			time {
+				display: block;
+				width: 108px;
+				margin: -1px 0 @mu -@lu;
+				padding-left: @mu;
+				background: #fff url("../img/stripe-bg.png") ;
+				font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+				font-weight: bold;
+				line-height: 28px;
+				color: @accentColor;
+				.radius(2px);
+				.transition(width margin .3s ease-in);
+			}
+			h1 {
+				font-size: 2em;
+				.transition(color .3s ease-in);
+			}
+		}
+		p {
+			padding: 0 @lu 0 0;
+			max-width: 512px;
+		}
+}

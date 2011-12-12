@@ -78,6 +78,7 @@ dt {
 a {
 	text-decoration: none;
 	color: @linkColor;
+	.transition(color .3s ease-in);
 	
 	&:hover {
 		color: @linkHoverColor;
@@ -139,13 +140,13 @@ del {
 
 // Select text
 ::-moz-selection {
-	background: #c47529;
-	color: #fff;
+	background: @selectColor;
+	color: #000;
 	text-shadow: none;
 }
 ::selection {
-	background: #c47529;
-	color: #fff;
+	background: @selectColor;
+	color: 000;
 	text-shadow: none;
 }
 

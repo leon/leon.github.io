@@ -1,12 +1,19 @@
 # Jekyll settings
-permalink: /:categories/:year/:month/:title/
+permalink: /:year/:month/:title/
 pygments: true
 markdown: rdiscount
-
-exclude: ["README.md", "LICENSE.md", "Gemfile", "Gemfile.lock"]
+paginator: true
+exclude: ["bin", "README.md", "LICENSE.md", "Gemfile", "Gemfile.lock"]
 
 # Site settings
 url: http://www.radley.se
 title: Leon Radley
 author: Leon Radley
 simple_search: http://google.com/search
+
+# Navigation
+navigation:
+- text: Blog
+  url: /
+- text: Labs
+  url: /labs/

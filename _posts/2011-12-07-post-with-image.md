@@ -1,7 +1,8 @@
 ---
-layout: blog
+layout: post
 title: Post with an image
-image: http://lorempixel.com/550/290/fashion/
+image: http://lorempixel.com/550/290/animals/
+tags: [animal, test]
 ---
 #### This post has an image to describe it, it should be shown above the post i think
 
