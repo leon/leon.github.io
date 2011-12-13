@@ -79,6 +79,7 @@ var requestAnimationFrame = this.requestAnimationFrame
 	|| this.mozRequestAnimationFrame
 	|| this.oRequestAnimationFrame
 	|| this.msRequestAnimationFrame;
+
 var Sprite = new Class({
 
 	Extends: Options,
@@ -280,8 +281,8 @@ var Carousel = new Class({
 });
 
 window.addEvent('domready', function(){
-    new Carousel('wei', 'img/weixioaming{num}.jpg', {
-        frames: 36,
-        autoPlay: true
-    });
+	new Carousel('wei', 'img/weixioaming{num}.jpg', {
+		frames: 36,
+		autoPlay: true
+	});
 });

@@ -15,6 +15,9 @@
 	<link rel="shortcut icon" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=32" />
 	<link rel="alternate" type="application/rss+xml" title="Leon Radley's Blog" href="http://www.radley.se/rss.xml" />
 	<link rel="stylesheet" href="{{ root_url }}/assets/css/site.css" />
+	{% for css in page.css %}
+		<link rel="stylesheet" href="{{ css }}" />
+	{% endfor %}
 </head>
 <body>
 	<header class="header">
@@ -45,6 +48,10 @@
 			<a class="back-to-top" href="#home" title="Back to top">⇪</a>
 		</footer>
 	</div>
+	<script type="text/javascript" src="{{ root_url }}/assets/js/mootools-core.js"></script>
+	{% for js in page.js %}
+		<script type="text/javascript" src="{{ js }}" async></script>
+	{% endfor %}
 	{% include analytics.html %}
 </body>
 </html>

@@ -30,6 +30,7 @@ GEM
     posix-spawn (0.3.6)
     rdiscount (1.6.8)
     syntax (1.0.0)
+    term-ansicolor (1.0.7)
     therubyracer (0.9.9)
       libv8 (~> 3.3.10)
 
@@ -40,3 +41,4 @@ DEPENDENCIES
   jekyll-less
   liquid (= 2.2.2)
   rdiscount
+  term-ansicolor

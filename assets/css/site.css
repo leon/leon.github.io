@@ -340,6 +340,20 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+.button {
+  display: inline-block;
+  padding: 4px 24px;
+  background: #fff;
+  color: #121212;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  cursor: pointer;
+}
+.button:hover {
+  text-decoration: none;
+}
 .highlight .c {
   color: #586e75;
 }
@@ -751,6 +765,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   margin-bottom: 0;
   width: auto;
 }
+.post .actions {
+  margin: 12px 0;
+}
 .teaser a {
   display: block;
   color: #121212;
@@ -800,6 +817,66 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .teaser p {
   padding: 0 24px 0 0;
   max-width: 512px;
+}
+.labs {
+  margin-left: -24px;
+  zoom: 1;
+}
+.labs:before, .labs:after {
+  display: table;
+  *display: inline;
+  content: "";
+  zoom: 1;
+}
+.labs:after {
+  clear: both;
+}
+.lab {
+  display: inline;
+  float: left;
+  margin-left: 24px;
+  width: 215.9999999976px;
+  width: 215px;
+  min-height: 220px;
+  margin-top: 24px;
+  -webkit-transition: width margin 0.3s ease-in;
+  -moz-transition: width margin 0.3s ease-in;
+  -ms-transition: width margin 0.3s ease-in;
+  -o-transition: width margin 0.3s ease-in;
+  transition: width margin 0.3s ease-in;
+}
+.lab a {
+  color: #121212;
+}
+.lab a:hover {
+  text-decoration: none;
+}
+.lab a:hover h1 {
+  color: #2e8697;
+}
+.lab h2 {
+  display: block;
+  padding: 24px 12px 4px 0;
+  margin-bottom: 12px;
+  color: #ddd;
+  text-align: right;
+  background: url("../img/gray-bg.png") repeat;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+.lab h1 {
+  font-size: 1.3em;
+  padding: 0 4px;
+  -webkit-transition: color 0.3s ease-in;
+  -moz-transition: color 0.3s ease-in;
+  -ms-transition: color 0.3s ease-in;
+  -o-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+}
+.lab p {
+  padding: 0 4px;
+  margin: 0;
 }
 .header {
   position: relative;
@@ -924,6 +1001,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   transition: all 0.3s ease-in;
 }
 .content-wide {
+  position: relative;
   display: inline;
   float: left;
   margin-left: 24px;
@@ -945,7 +1023,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 .footer {
   position: relative;
-  width: 720px;
+  width: 696px;
+  margin-top: 24px;
   border: 1px dashed #e0e0e0;
   border-bottom: 0;
   line-height: 36px;
@@ -976,6 +1055,16 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   color: #3aa9be;
   text-decoration: none;
 }
+@media (max-width: 480px) {
+  .labs {
+    margin-left: 0;
+  }
+  .lab {
+    width: 94%;
+    margin-left: 3%;
+    min-height: 0;
+  }
+}
 @media (max-width: 640px) {
   .header .main-nav {
     width: 100%;
@@ -991,7 +1080,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   .main {
     margin-left: 0;
   }
-  .content {
+  .content, .content-wide {
     width: 94%;
     margin-left: 3%;
     border-right: 0;
@@ -1014,7 +1103,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   .main {
     margin-left: 0;
   }
-  .content {
+  .content, .content-wide {
     width: 72%;
     margin-left: 3%;
   }

@@ -23,6 +23,7 @@
 @import "type";
 @import "table";
 @import "form";
+@import "element";
 @import "pygments";
 @import "print";
 @import "aside";
@@ -125,6 +126,7 @@
 	.transition(all .3s ease-in);
 }
 .content-wide {
+	position: relative;
 	.gridColumn(10);
 	.transition(all .3s ease-in);
 }
@@ -138,7 +140,8 @@
 
 .footer {
 	position: relative;
-	.gridWidth(10, @lu);
+	.gridWidth(10);
+	margin-top: @lu;
 	border: 1px dashed @dashColor;
 	border-bottom: 0;
 	line-height: @mu * 3;
@@ -164,6 +167,17 @@
 	}
 }
 
+@media (max-width: 480px) {
+	.labs {
+		margin-left: 0;
+	}
+	.lab {
+		width: 94%;
+		margin-left: 3%;
+		min-height: 0;
+	}
+}
+
 @media (max-width: 640px) {
 	.header {
 		.main-nav {
@@ -181,7 +195,8 @@
 		.main {
 			margin-left: 0;
 		}
-			.content {
+			.content,
+			.content-wide {
 				width: 94%;
 				margin-left: 3%;
 				border-right: 0;
@@ -205,7 +220,8 @@
 	.main {
 		margin-left: 0;
 	}
-	.content {
+	.content,
+	.content-wide {
 		width: 72%;
 		margin-left: 3%;
 	}

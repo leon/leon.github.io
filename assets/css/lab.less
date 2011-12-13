@@ -1,6 +1,40 @@
 .labs {
-	
+	.row();
 }
 	.lab {
-		
+		.gridColumn(3.3333333333);
+		width: 215px; // Override because of sub-pixel problems
+		min-height: 220px;
+		margin-top: @lu;
+		.transition(width margin .3s ease-in);
+
+		a {
+			color: @textColor;
+
+			&:hover {
+				text-decoration: none;
+
+				h1 {
+					color: @linkHoverColor;
+				}
+			}
+		}
+		h2 {
+			display: block;
+			padding: @lu @mu @su 0;
+			margin-bottom: @mu;
+			color: #ddd;
+			text-align:right;
+			background: url("../img/gray-bg.png") repeat;
+			.radius(@su);
+		}
+		h1 {
+			font-size: 1.3em;
+			padding: 0 @su;
+			.transition(color .3s ease-in);
+		}
+		p {
+			padding: 0 @su;
+			margin: 0;
+		}
 	}

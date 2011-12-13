@@ -12,7 +12,7 @@ layout: default
 <div class="content">
 	<article class="post{% if page.image %} image-post{% endif %}">
 		<header>
-			<time class="post-date" pubdate datetime="{{ page.date | date_to_string }}">{{ page.date | date_to_string }}</time>
+			<time class="post-date" pubdate datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
 			{% if page.tags.size > 0 %}
 				<ul class="post-tags">
 					{% for tag in page.tags %}
