@@ -18,6 +18,7 @@
 	{% for css in page.css %}
 		<link rel="stylesheet" href="{{ css }}" />
 	{% endfor %}
+	<script type="text/javascript" src="{{ root_url }}/assets/js/mootools-core.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -48,7 +49,7 @@
 			<a class="back-to-top" href="#home" title="Back to top">⇪</a>
 		</footer>
 	</div>
-	<script type="text/javascript" src="{{ root_url }}/assets/js/mootools-core.js"></script>
+	<script type="text/javascript" src="{{ root_url }}/assets/js/ios-orientation-bugfix.js"></script>
 	{% for js in page.js %}
 		<script type="text/javascript" src="{{ js }}" async></script>
 	{% endfor %}
