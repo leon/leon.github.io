@@ -1,0 +1,11 @@
+---
+layout: tag
+title: "unix"
+---
+{% for post in site.posts %}
+	{% for tag in post.tags %}
+		{% if tag == "unix" %}
+			{% include teaser.html %}
+		{% endif %}
+	{% endfor %}
+{% endfor %}
