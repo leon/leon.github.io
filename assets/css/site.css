@@ -354,6 +354,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .button:hover {
   text-decoration: none;
 }
+.align-right {
+  float: right;
+}
 .highlight .c {
   color: #586e75;
 }
@@ -752,6 +755,23 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .post .body {
   padding: 0 24px 0 0;
   max-width: 512px;
+}
+.post footer {
+  zoom: 1;
+  margin: 12px 0;
+}
+.post footer:before, .post footer:after {
+  display: table;
+  *display: inline;
+  content: "";
+  zoom: 1;
+}
+.post footer:after {
+  clear: both;
+}
+.post footer .comments-link {
+  float: right;
+  border-right: 0;
 }
 .post.image-post header {
   border-top: 0;

@@ -22,6 +22,9 @@ title: Blog
 			<div class="body">
 				{{ post.content }}
 			</div>
+			<footer>
+				<a class="comments-link button" href="{{ post.url }}#comments">Comments</a>
+			</footer>
 		</article>
 	{% endfor %}
 </div>
