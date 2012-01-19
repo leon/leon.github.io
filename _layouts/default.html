@@ -13,7 +13,7 @@
 	<link rel="apple-touch-icon-precomposed" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=57" />
 	<link rel="apple-touch-startup-image" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=640">
 	<link rel="shortcut icon" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=32" />
-	<link rel="alternate" type="application/rss+xml" title="Leon Radley's Blog" href="http://www.radley.se/rss.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Leon Radley's Blog" href="{{ site.url }}/rss.xml" />
 	<link rel="stylesheet" href="{{ root_url }}/assets/css/site.css" />
 	{% for css in page.css %}
 		<link rel="stylesheet" href="{{ css }}" />
@@ -23,7 +23,7 @@
 <body>
 	<header class="header">
 		<nav role="main" class="main-nav">
-			<a id="home" class="site" href="/">Radley.se</a>
+			<a id="home" class="site" href="/">Leon.Radley.se</a>
 			<ul>
 				{% for link in site.navigation %}
 					{% assign current = nil %}

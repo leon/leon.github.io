@@ -6,7 +6,7 @@ paginator: true
 exclude: ["bin", "README.md", "LICENSE.md", "Gemfile", "Gemfile.lock"]
 
 # Site settings
-url: http://www.radley.se
+url: http://leon.radley.se
 title: Leon Radley
 description: "Blog of Leon Radley, professional web developer"
 author: Leon Radley
