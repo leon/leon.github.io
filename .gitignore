@@ -1,3 +1,5 @@
 .*
 !.gitignore
 _site
+_drafts/
+radley.sublime-workspace
