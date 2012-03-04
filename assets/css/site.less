@@ -1,21 +1,17 @@
-// Sizes for use as margin and paddings
-@su: 4px;
-@mu: 12px;
-@lu: 24px;
-@hu: 48px;
-
 // Grid
-@columnWidth: 48px;
-@gutterWidth: 24px;
+@columnWidth: 40px;
+@gutterWidth: 20px;
+@columns: 14;
+@asideColumns: 3;
 
 // Colors
-@selectColor: #f1f1f1;
-@textColor: #121212;
-@headingColor: #444;
-@linkColor: #1c525c;
-@linkHoverColor: lighten(#1c525c, 15%);
-@accentColor: lighten(#1c525c, 25%);
-@dashColor: #e0e0e0;
+@selectColor    : #f1f1f1;
+@textColor      : #121212;
+@headingColor   : #444;
+@linkColor      : darken(#3aa9be, 15%);
+@linkHoverColor : saturate(@linkColor, 20%);
+@accentColor    : lighten(#1c525c, 25%);
+@dashColor      : #e0e0e0;
 
 @import "reset";
 @import "mixin";
@@ -47,15 +43,15 @@
 
 	.main-nav {
 		margin: 0 auto;
-		.gridWidth(10);
+		.gridWidth(@columns);
 		.clearfix();
-		
+
 		a {
 			display: block;
-			padding: 0 @mu;
+			padding: 0 10px;
 			font-family: CabinSketchBold, Futura, "Century Gothic", AppleGothic, sans-serif;
 			font-size: 1.6em;
-			line-height: 2 * @lu;
+			line-height: 50px;
 			text-transform: uppercase;
 			border-right: 1px dashed @dashColor;
 
@@ -64,10 +60,10 @@
 			}
 			&.site {
 				float: left;
-				padding: 0 @lu 0 ((@lu * 2) + @mu);
+				padding: 0 20px 0 60px;
 				color: @accentColor;
 				border-right: 1px dashed @dashColor;
-				background: url("http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=48") no-repeat 0 0;
+				background: url("http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=50") no-repeat 0 0;
 			}
 		}
 		ul {
@@ -85,7 +81,7 @@
 .social {
 	position: absolute;
 	top: 0;
-	right: @mu;
+	right: 10px;
 	list-style: none;
 	li {
 		float: left;
@@ -93,7 +89,7 @@
 			display: block;
 			height: 32px;
 			width: 32px;
-			margin: 8px 0 8px @su;
+			margin: 8px 0 8px 5px;
 			text-indent: -10000px;
 			background: url("../img/social.png") no-repeat 0 0;
 
@@ -112,7 +108,7 @@
 
 .container {
 	margin: 0 auto;
-	.gridWidth(10);
+	.gridWidth(@columns);
 	.transition(all .3s ease-in);
 }
 
@@ -122,42 +118,42 @@
 }
 
 .content {
-	.gridColumn(8, -1px);
+	.gridColumn(@columns - @asideColumns, -1px);
 	border-right: 1px dashed @dashColor;
 	.transition(all .3s ease-in);
 }
 .content-wide {
 	position: relative;
-	.gridColumn(10);
+	.gridColumn(@columns);
 	.transition(all .3s ease-in);
 }
 
 .aside {
-	.gridColumn(2);
-	margin-top: @lu;
-	margin-bottom: @lu;
+	.gridColumn(@asideColumns);
+	margin-top: 20px;
+	margin-bottom: 20px;
 	min-height: 300px;
 }
 
 .footer {
 	position: relative;
-	.gridWidth(10);
-	margin-top: @lu;
+	.gridWidth(@columns);
+	margin-top: 20px;
 	border: 1px dashed @dashColor;
 	border-bottom: 0;
-	line-height: @mu * 3;
-	min-height: @mu * 3;
+	line-height: 10px * 3;
+	min-height: 10px * 3;
 	.transition(all .3s ease-in);
 
 	small {
-		margin: 0 @mu;
+		margin: 0 10px;
 		font-size: .7em;
 		color: #ddd;
 	}
 	.back-to-top {
 		position: absolute;
 		top: 0;
-		right: @mu;
+		right: 10px;
 		color: #ddd;
 		.transition(color .3s ease-in);
 
@@ -179,7 +175,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
 	.header {
 		.main-nav {
 			width: 100%;
@@ -208,7 +204,7 @@
 			.aside {
 				width: 94%;
 				margin-left: 3%;
-				padding-top: @lu;
+				padding-top: 20px;
 				border-top: 1px dashed @dashColor;
 			}
 	.footer {
@@ -217,7 +213,7 @@
 	}
 }
 
-@media (min-width: 640px) and (max-width: 720px) {
+@media (min-width: 760px) and (max-width: 860px) {
 	.main {
 		margin-left: 0;
 	}
@@ -235,7 +231,7 @@
 	}
 }
 
-@media (max-width: 848px) {
+@media (max-width: 920px) {
 	.post-navigation {
 		display: none;
 	}

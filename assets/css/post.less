@@ -2,11 +2,11 @@
 	.previous,
 	.next {
 		position: fixed;
-		width: @hu;
-		height: @hu;
+		width: 40px;
+		height: 40px;
 		top: 50%;
-		margin-top: -(@hu / 2);
-		line-height: @hu;
+		margin-top: -(40px / 2);
+		line-height: 40px;
 		text-align: center;
 		color: #ddd;
 		font-size: 2em;
@@ -18,16 +18,16 @@
 	}
 	.previous {
 		left: 0;
-		.radius(0 @su @su 0);
+		.radius(0 5px 5px 0);
 	}
 	.next {
 		right: 0;
-		width: @hu + @mu; // Accomodate for scroll
-		.radius(@su 0 0 @su);
+		width: 40px + 10px; // Accomodate for scroll
+		.radius(5px 0 0 5px);
 	}
 }
 .post {
-	margin: @lu 0;
+	margin: 20px 0;
 
 	header {
 		position: relative;
@@ -36,10 +36,10 @@
 		.post-date {
 			display: block;
 			width: 108px;
-			margin: -1px 0 @mu -@lu;
-			padding-left: @mu;
+			margin: -1px 0 10px -20px;
+			padding-left: 10px;
 			background: #fff url("../img/stripe-bg.png") ;
-			font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+			font-family: JuraBold, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 			font-weight: bold;
 			line-height: 28px;
 			color: @accentColor;
@@ -49,14 +49,14 @@
 		.post-tags {
 			position: absolute;
 			top: 0;
-			right: @su;
+			right: 5px;
 			list-style: none;
 			li {
 				display: inline-block;
 				a {
 					display: block;
-					margin: @su 0 0 0;
-					padding: @su;
+					margin: 5px 0 0 0;
+					padding: 5px;
 					background: #fff;
 					color: #ddd;
 					font-size: 12px;
@@ -73,12 +73,12 @@
 		}
 	}
 	.body {
-		padding: 0 @lu 0 0;
-		max-width: 512px;
+		padding: 0 20px 0 0;
+		max-width: 600px;
 	}
 	footer {
 		.clearfix();
-		margin: @mu 0;
+		margin: 10px 0;
 
 		.comments-link {
 			float: right;
@@ -91,7 +91,7 @@
 
 			.post-image {
 				display: block;
-				margin: -1px 0 @mu 0;
+				margin: -1px 0 10px 0;
 			}
 			.post-date {
 				margin-top: 0;
@@ -101,6 +101,6 @@
 		}
 	}
 	.actions {
-		margin: @mu 0;
+		margin: 10px 0;
 	}
 }
