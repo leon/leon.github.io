@@ -33,6 +33,14 @@
 		position: relative;
 		border-top: 1px dashed @dashColor;
 
+		.github-fork {
+			position: absolute;
+			top: 32px;
+			right: 0;
+			display: inline-block;
+			border: 0;
+		}
+
 		.post-date {
 			display: block;
 			width: 108px;
@@ -41,7 +49,7 @@
 			background: #fff url("../img/stripe-bg.png") ;
 			font-family: JuraBold, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 			font-weight: bold;
-			line-height: 28px;
+			line-height: 32px;
 			color: @accentColor;
 			.radius(2px);
 			.transition(width margin .3s ease-in);
