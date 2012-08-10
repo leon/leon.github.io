@@ -18,3 +18,5 @@ navigation:
   url: /
 - text: Labs
   url: /labs/
+- text: Projects
+  url: /project/

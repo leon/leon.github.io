@@ -5,6 +5,7 @@ You may not reuse anything within these directories without my permission:
 
  * _posts
  * labs
+ * project
 
 ## Everything else goes under the MIT Licence.
 Copyright (C) 2011 Leon Radley
