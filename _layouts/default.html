@@ -53,6 +53,7 @@
 	{% for js in page.js %}
 		<script type="text/javascript" src="{{ js }}" async></script>
 	{% endfor %}
+	{% include disqus-count.html %}
 	{% include analytics.html %}
 </body>
 </html>
