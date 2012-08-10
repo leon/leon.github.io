@@ -6,18 +6,27 @@ This means that you need to precompile you less into css and commit that to your
 
 I've done it by using the less textmate bundle https://github.com/appden/less.tmbundle
 
+### Prerequisites
+
+	sudo gem update --system
+	sudo gem install bundler
+	bundle install
+
 ### How to compile
+
 	rake build
 
 This will automatically create the tag directory with the current tags and also a tag-cloud that you can include on a page.
 
 ### How to start the blog
+
 	rake
 
 This will start the blog at http://localhost:4000 and open the project in textmate.
 
 
 ### New blog post
+
 	rake new
 
 This will create a blogpost and start textmate with that file.

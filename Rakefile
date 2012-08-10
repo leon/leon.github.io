@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'webrick'
 require 'directory_watcher'
 require "term/ansicolor"
@@ -49,7 +50,7 @@ task :develop => :build do
   printHeader "Development server started at http://localhost:4000/"
   printHeader "Opening website in default web browser..."
   %x[open http://localhost:4000/]
-  %x[mate ./]
+  %x[subl ./]
   printHeader "Development mode entered."
   thread.join()
 end
