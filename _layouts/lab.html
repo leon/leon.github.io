@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% if page.github %}
+	<a class="github-fork" href="{{ page.github }}" title="Fork me on Github">Fork me on GitHub</a>
+{% endif %}
 <div class="content-wide">
 	{{ content }}
 </div>

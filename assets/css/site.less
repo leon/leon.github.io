@@ -164,6 +164,18 @@
 	}
 }
 
+.github-fork {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	display: block;
+	width: 150px;
+	height: 150px;
+	background: transparent url('https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png') no-repeat 0 0;
+	text-indent: -100%;
+	z-index: 1000;
+}
+
 @media (max-width: 480px) {
 	.labs {
 		margin-left: 0;
@@ -210,6 +222,10 @@
 	.footer {
 		width: 94%;
 		margin-left: 3%;
+	}
+
+	a.github-fork {
+		top: 100px;
 	}
 }
 
