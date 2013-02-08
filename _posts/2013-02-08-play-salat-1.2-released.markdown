@@ -1,0 +1,16 @@
+---
+layout: post
+title: Play Salat 1.2 Released
+github: https://github.com/leon/play-salat
+tags: [play]
+---
+
+I've just published [play-salat](https://github.com/leon/play-salat) version 1.2
+
+Version 1.2 comes with:
+
+- Built against Play 2.1.0 to get [all the magic the new stuff](http://playframework.com).
+- Sample updated to Play 2.1.0 and added JSON Rest example
+- Salat 1.9.2-SNAPSHOT to get scala 2.10, I will release version 1.3 as soon as it's available in release.
+- Mongo Options - Thanks to @ktonga we can now specify loads of settings for our mongo connections. [See settings](https://github.com/leon/play-salat/blob/master/src/test/scala/se/radley/plugin/salat/OptionsFromConfigSpec.scala#L19-L36) 
+- Added JSON Reads and Writes for ObjectId. [See example](https://github.com/leon/play-salat/blob/master/sample/app/models/User.scala#L46)
