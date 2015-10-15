@@ -5,9 +5,7 @@ tags: [spring, mongodb]
 github: https://github.com/leon/demo-spring-data-mongodb-mock-data
 ---
 
-### When developing applications you often need some data when you start out, and it's always a problem getting it into the
-application, should you use the domain model to programatically create all the records, should you dump the data directly
-into the database?
+### When developing applications you often need some data when you start out, and it's always a problem getting it into the application, should you use the domain model to programatically create all the records, should you dump the data directly into the database?
 
 The following demo does it by using `Jackson2RepositoryPopulatorFactoryBean`
 
