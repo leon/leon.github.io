@@ -13,9 +13,9 @@ The problem I faced with this was that I didn't want to have to include `/admin/
 ## Meet the html base tag
 It's not one of the most used html tags but it's great. By adding:
 
-{% highlight html %}
+```html
 <base href="/admin/survey/123/" />
-{% endhighlight %}
+```
 
 to the top of your `<head>` all relative links now are relative to the specified base href.
 
@@ -25,12 +25,12 @@ So a link that would have looked like this `<a href="/admin/survey/{{"{{"}}surve
 
 And the same goes for all the routes. Something that would before look like this:
 
-{% highlight js %}
+```javascript
 var prefix = '/admin/survey/123/';
 
 .config(function ($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
- 
+
 	routeProvider
 	.when(prefix, {
 		templateUrl: prefix + 'partial.html',
@@ -41,14 +41,14 @@ var prefix = '/admin/survey/123/';
 		controller: 'PartialCtrl'
 	})
 });
-{% endhighlight %}
+```
 
 Could now be simplified as this.
 
-{% highlight js %}
+```javascript
 .config(function ($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
- 
+
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partial.html',
@@ -62,23 +62,23 @@ Could now be simplified as this.
 		redirectTo: '/'
 	});
 });
-{% endhighlight %}
+```
 
 ## Base href data
 You may ask but how would I get hold of the survey.id or any other survey data.
 
 By creating an Angular constant with the surveyId we can then inject where ever we want.
 
-{% highlight js %}
+```javascript
 <script>
 	// The @survey variable is coming from play via @(survey: Survey)
 	angular.module('app').constant('surveyId', '@survey.id');
 </script>
-{% endhighlight %}
+```
 
 We can then add a main app controller and survey service that loads the survey data as json from `/api/admin/survey/123` and injects it into the $rootScope
 
-{% highlight html %}
+```html
 <!doctype html>
 <html ng-app="app" ng-controller="AppCtrl">
 <head>
@@ -90,11 +90,11 @@ We can then add a main app controller and survey service that loads the survey d
 	...
 <body>
 </html>
-{% endhighlight %}
+```
 
 And then the `AppCtrl` and `SurveyService`
 
-{% highlight js %}
+```javascript
 // in SurveyService.js
 angular.module('app').factory('SurveyService', function ($resource) {
 	return $resource('/api/admin/survey/:surveyId', {surveyId: '@id'});
@@ -106,8 +106,7 @@ angular.module('app').controller('AppCtrl', function ($scope, $rootScope, Survey
 
 	$rootScope.survey = SurveyService.get({surveyId: surveyId});
 });
-{% endhighlight %}
-
+```
 
 ## Conclusion
 By being able to have angular apps live under a sub path and not be bound to that specific path makes your life a lot simpler when you want to use that same app in another project.

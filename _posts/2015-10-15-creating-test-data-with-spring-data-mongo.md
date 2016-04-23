@@ -19,7 +19,7 @@ Only the root objects need to have the special `_class` key, so that jackson kno
 
 So if you have a embedded object include it as usual
 
-{% highlight json %}
+```json
 [
   {
     "_class": "se.radley.demo.user.User",
@@ -33,12 +33,12 @@ So if you have a embedded object include it as usual
     }
   }
 ]
-{% endhighlight %}
+```
 
 If you need to link to another document via `@DbRef` the other document needs to have a constructor or factory method
 to be able to create the document
 
-{% highlight java %}
+```java
 /**
  * Factory constructor for creating DbRefs
  * @param id
@@ -50,10 +50,10 @@ private User(String id) {
 public static User ref(String id) {
     return new User(id);
 }
-{% endhighlight %}
+```
 
 That way you can easily create references to objects without having to get the from the db with
 
-{% highlight java %}
+```java
 User leon = User.ref("leon");
-{% endhighlight %}
+```

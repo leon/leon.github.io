@@ -13,17 +13,17 @@
 		&:hover {
 			text-decoration: none;
 			background: #fff url("../img/stripe-bg.png");
-			color: @accentColor;
+			color: $accentColor;
 		}
 	}
 	.previous {
 		left: 0;
-		.radius(0 5px 5px 0);
+		@include radius(0 5px 5px 0);
 	}
 	.next {
 		right: 0;
 		width: 40px + 10px; // Accomodate for scroll
-		.radius(5px 0 0 5px);
+		@include radius(5px 0 0 5px);
 	}
 }
 .post {
@@ -31,7 +31,7 @@
 
 	header {
 		position: relative;
-		border-top: 1px dashed @dashColor;
+		border-top: 1px dashed $dashColor;
 
 		.github-fork {
 			position: absolute;
@@ -50,9 +50,9 @@
 			font-family: JuraBold, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 			font-weight: bold;
 			line-height: 32px;
-			color: @accentColor;
-			.radius(2px);
-			.transition(width margin .3s ease-in);
+			color: $accentColor;
+			@include radius(2px);
+			//@include transition("width margin .3s ease-in");
 		}
 		.post-tags {
 			position: absolute;
@@ -69,11 +69,11 @@
 					color: #ddd;
 					font-size: 12px;
 					line-height: 12px;
-					.radius(8px);
-					.transition(color .3s ease-in);
+					@include radius(8px);
+					//@include transition(color .3s ease-in);
 
 					&:hover {
-						color: @accentColor;
+						color: $accentColor;
 						text-decoration: none;
 					}
 				}
@@ -85,7 +85,7 @@
 		max-width: 600px;
 	}
 	footer {
-		.clearfix();
+		@include clearfix();
 		margin: 10px 0;
 
 		.comments-link {

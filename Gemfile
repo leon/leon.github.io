@@ -1,6 +1,2 @@
-source "http://rubygems.org"
-
-gem 'jekyll-less'
-gem 'rdiscount'
-gem 'liquid'
-gem 'term-ansicolor'
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins

@@ -1,21 +1,21 @@
 .labs {
-	.row();
+	@include row();
 }
 	.lab {
-		.gridColumn(3.3333333333);
+		@include gridColumn(3.3333333333);
 		width: 215px; // Override because of sub-pixel problems
 		min-height: 220px;
 		margin-top: 20px;
-		.transition(width margin .3s ease-in);
+		//@include transition("width margin .3s ease-in");
 
 		a {
-			color: @textColor;
+			color: $textColor;
 
 			&:hover {
 				text-decoration: none;
 
 				h1 {
-					color: @linkHoverColor;
+					color: $linkHoverColor;
 				}
 			}
 		}
@@ -26,12 +26,12 @@
 			color: #ddd;
 			text-align:right;
 			background: url("../img/gray-bg.png") repeat;
-			.radius(5px);
+			@include radius(5px);
 		}
 		h1 {
 			font-size: 1.3em;
 			padding: 0 5px;
-			.transition(color .3s ease-in);
+			//@include transition("color .3s ease-in");
 		}
 		p {
 			padding: 0 5px;

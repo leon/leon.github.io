@@ -2,9 +2,9 @@
 	display: inline-block;
 	padding: 5px 20px;
 	background: #fff;
-	color: @textColor;
+	color: $textColor;
 	border: 1px dashed #ddd;
-	.radius(5px);
+	@include radius(5px);
 	cursor: pointer;
 
 	&:hover {

@@ -10,7 +10,7 @@ tags: [play]
 
 instead of having to write this.
 
-{% highlight scala %}
+```scala
 def create() = Action(parse.json) { implicit request =>
   request.body.validate[User].fold(
     valid = { user =>
@@ -20,11 +20,11 @@ def create() = Action(parse.json) { implicit request =>
     invalid = (e => BadRequest(JsError.toFlatJson(e)).as("application/json"))
   )
 }
-{% endhighlight %}
+```
 
 we want to be able to write this.
 
-{% highlight scala %}
+```scala
 import controllers.Actions._
 
 // Make sure there is a implicit Reads[User] available...
@@ -32,7 +32,7 @@ def create = JsonAction[User] { user =>
   User.save(user)
   Ok(Json.toJson(user))
 }
-{% endhighlight %}
+```
 
 ### The implementation
 This assumes that you have a JSON `Reads[A]` available as an implicit variable.
@@ -41,7 +41,7 @@ See [Writing Reads[T] combinators](http://www.playframework.com/documentation/2.
 
 Start by putting this in a file called `Actions.scala` in your `controllers` dir and as you see in the above example we import all the actions defined in that file by writing `import controllers.Actions._`
 
-{% highlight scala %}
+```scala
 package controllers
 
 import play.api.mvc._
@@ -66,9 +66,9 @@ object Actions extends Results with BodyParsers {
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Conclusion
-Understanding Scala is a lot harder than Java, at least for me, coming from a non functional background. 
+Understanding Scala is a lot harder than Java, at least for me, coming from a non functional background.
 But after completing [the on-line course, functional programming in Scala by Martin Odersky](https://www.coursera.org/course/progfun),
 I feel a lot more comfortable in Scala and Play!
