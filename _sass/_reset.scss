@@ -77,11 +77,11 @@ dt {
 // Links
 a {
 	text-decoration: none;
-	color: @linkColor;
-	.transition(color .3s ease-in);
+	color: $linkColor;
+	//@include transition(color .3s ease-in);
 
 	&:hover {
-		color: @linkHoverColor;
+		color: $linkHoverColor;
 		text-decoration: underline;
 	}
 	&:focus {
@@ -140,12 +140,12 @@ del {
 
 // Select text
 ::-moz-selection {
-	background: @selectColor;
+	background: $selectColor;
 	color: #000;
 	text-shadow: none;
 }
 ::selection {
-	background: @selectColor;
+	background: $selectColor;
 	color: 000;
 	text-shadow: none;
 }

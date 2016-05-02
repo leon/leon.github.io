@@ -6,9 +6,9 @@
 		display: inline-block;
 		a {
 			display: inline-block;
-			.transition(color .3s ease-in);
+			//@include transition(color .3s ease-in);
 			&:hover {
-				color: @linkHoverColor;
+				color: $linkHoverColor;
 				text-decoration: none;
 			}
 		}

@@ -4,7 +4,7 @@
 		line-height: 1.1428571428571428571428571428571em;
 		margin-bottom: .5em;
 		color: #bbb;
-		.transition(color .3s ease-in);
+		//@include transition("color .3s ease-in");
 		a {
 			color: #bbb;
 		}
@@ -13,7 +13,7 @@
 		&:hover {
 			h1,
 			h1 a {
-				color: @linkHoverColor;
+				color: $linkHoverColor;
 			}
 		}
 		ul {
@@ -23,16 +23,16 @@
 				display: block;
 				color: #bbb;
 				border-bottom: 1px solid transparent;
-				.transition(all .3s ease-in);
+				//@include transition("all .3s ease-in");
 
 				&:hover {
-					color: @linkHoverColor;
+					color: $linkHoverColor;
 					text-decoration: none;
-					border-bottom: 1px dashed @dashColor;
+					border-bottom: 1px dashed $dashColor;
 				}
 				span {
 				    margin-left: 5px;
-				    color: @dashColor;
+				    color: $dashColor;
 				}
 			}
 		}

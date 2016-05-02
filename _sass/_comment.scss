@@ -2,7 +2,7 @@
 	margin-top: 20px;
 	padding-top: 20px;
 	padding-right: 20px;
-	border-top: 1px dashed @dashColor;
+	border-top: 1px dashed $dashColor;
 
 	#dsq-content {
 		margin-right: 24px;
@@ -14,12 +14,12 @@
 	}
 
 	a {
-		color: @textColor;
+		color: $textColor;
 	}
 
 	.dsq-textarea-background {
 		background: #fff;
-		border: 1px dashed @dashColor;
+		border: 1px dashed $dashColor;
 		box-shadow: none;
 	}
 }

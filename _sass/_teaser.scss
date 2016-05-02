@@ -1,17 +1,17 @@
 .teaser {
 	a {
 		display: block;
-		color: @textColor;
+		color: $textColor;
 
 		&:hover {
 			text-decoration: none;
 			h1 {
-				color: @accentColor;
+				color: $accentColor;
 			}
 		}
 	}
 		header {
-			border-top: 1px dashed @dashColor;
+			border-top: 1px dashed $dashColor;
 			img {
 				float: left;
 				display: inline;
@@ -27,13 +27,13 @@
 				font-family: SansationBold, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 				font-weight: bold;
 				line-height: 28px;
-				color: @accentColor;
-				.radius(2px);
-				.transition(width margin .3s ease-in);
+				color: $accentColor;
+				@include radius(2px);
+				//@include transition(width margin .3s ease-in);
 			}
 			h1 {
 				font-size: 2em;
-				.transition(color .3s ease-in);
+				//@include transition(color .3s ease-in);
 			}
 		}
 		p {

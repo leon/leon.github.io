@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Akka command based socket server
-image: /assets/post/plug.jpg
+image: /img/posts/plug.jpg
 github: https://github.com/leon/akka-command-based-socketserver
 tags: [akka]
 ---

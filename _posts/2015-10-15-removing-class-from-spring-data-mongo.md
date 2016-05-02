@@ -10,7 +10,7 @@ When using [spring data mongo](http://projects.spring.io/spring-data-mongodb/) i
 
 But if your domain model is simple and flat, you can remove it by overriding the default `MappingMongoConverter`
 
-{% highlight java %}
+```java
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.Bean;
@@ -38,4 +38,4 @@ public class MongoConfig {
     }
 
 }
-{% endhighlight %}
+```
