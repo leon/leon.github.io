@@ -10,7 +10,7 @@ But because `*ngFor` only supports creating one element I hit a wall.
 
 After some digging I found that by destructuring `*ngFor` into it's standalone attributes I could use them on a `<template>` and be able to create what I wanted.
 
-```javascript
+```ts
 
 import {Component, Input, Output, ChangeDetectionStrategy, EventEmitter} from 'angular2/core';
 
