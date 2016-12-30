@@ -1,6 +1,6 @@
 ---
 title: How to remove _class from spring data mongo collection
-layout: post
+categories: [spring]
 tags: [spring, mongodb]
 ---
 

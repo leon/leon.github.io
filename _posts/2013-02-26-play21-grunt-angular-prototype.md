@@ -1,7 +1,7 @@
 ---
-layout: post
 title: Play 2.1 Grunt, Angular - Prototype
 github: https://github.com/leon/play-grunt-angular-prototype
+categories: [play]
 tags: [play, js, angular]
 ---
 

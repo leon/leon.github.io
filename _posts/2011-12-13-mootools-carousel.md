@@ -1,5 +1,4 @@
 ---
-layout: post
 title: MooTools Carousel
 tags: [mootools]
 ---
@@ -21,7 +20,7 @@ By using the new javascript function `RequestAnimationFrame` I could make it run
 You also get a **bonus**, when the browser detects that your tab isn't visible it doesn't fire any `RequestAnimationFrame`.
 
 ### Options
-```javascript
+```js
 options: {
 	fps: 20,
 	frames: 0,
@@ -38,7 +37,7 @@ options: {
 ```
 
 ### Usage
-```javascript
+```js
 new Carousel('placeholderimageid', 'img/image-sequence{num}.jpg', {
 	frames: 36,
 	autoPlay: true

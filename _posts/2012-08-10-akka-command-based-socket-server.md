@@ -1,16 +1,15 @@
 ---
-layout: post
 title: Akka command based socket server
-image: /img/posts/plug.jpg
-github: https://github.com/leon/akka-command-based-socketserver
+categories: [akka]
 tags: [akka]
+github: https://github.com/leon/akka-command-based-socketserver
 ---
 
 #### Using Akka.IO Iteratees to build a simple socket server.
 
 We start of with the same base as in the [Akka IO http sample](http://doc.akka.io/docs/akka/snapshot/scala/io.html#Http_Server)
 
-{% highlight scala %}
+```scala
 class SocketServer(address: InetSocketAddress, addressPromise: Promise[SocketAddress]) extends Actor {
 
   val state = IO.IterateeRef.Map.async[IO.Handle]()(context.dispatcher)
@@ -40,7 +39,7 @@ class SocketServer(address: InetSocketAddress, addressPromise: Promise[SocketAdd
       state -= socket
   }
 }
-{% endhighlight %}
+```
 
 What this does is enable clients to connect and if there are any bytes arriving on the socket it will get to our `SocketServer.processRequest`.
 
@@ -50,7 +49,7 @@ Using Iteratees we can manipulate the incomming stream of chars, looking ahead t
 
 > **IO.Iteratee** Included with Akka’s IO module is a basic implementation of Iteratees. Iteratees are an effective way of handling a stream of data without needing to wait for all the data to arrive. This is especially useful when dealing with non blocking IO since we will usually receive data in chunks which may not include enough information to process, or it may contain much more data then we currently need.
 
-{% highlight scala %}
+```scala
 object SocketServer {
 
   // Import some predefined ByteStrings we have defined
@@ -72,7 +71,7 @@ object SocketServer {
     }
   }
 }
-{% endhighlight %}
+```
 
 ## A couple of commands
 
@@ -81,7 +80,7 @@ object SocketServer {
 The Exit command takes everything until it reaches the end of the line.
 The `EOL` is simply a shorthand for `ByteString("\r\n")`.
 
-{% highlight scala %}
+```scala
 object Exit extends Command {
 
   val command = ByteString("EXIT")
@@ -95,13 +94,13 @@ object Exit extends Command {
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Echo
 
 The Echo command isn't that different that the exit command, but instead of closing the socket it takes and outputs it back to the socket.
 
-{% highlight scala %}
+```scala
 object Echo extends Command {
 
   val command = ByteString("ECHO")
@@ -115,13 +114,14 @@ object Echo extends Command {
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Date
 
 The Date command shows us that we can parse the incoming bytes using nested iteratees.
 
-{% highlight scala %}
+```scala
+
 // Predefined parsers
 object SocketIteratees {
   def ascii(bytes: ByteString): String = bytes.decodeString("US-ASCII").trim
@@ -145,7 +145,7 @@ object Date extends Command {
     }
   }
 }
-{% endhighlight %}
+```
 
 ## Fork and try it out
 

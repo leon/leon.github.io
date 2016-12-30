@@ -1,0 +1,15 @@
+{
+  "name": "leon.radley.se",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Leon Radley <leon@radley.se>",
+  "license": "MIT",
+  "scripts": {
+    "prestart": "cp node_modules/font-awesome/fonts/* assets/fonts",
+    "start": "bundle exec jekyll serve --livereload"
+  },
+  "dependencies": {
+    "bootstrap": "next",
+    "font-awesome": "^4.7.0"
+  }
+}

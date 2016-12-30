@@ -1,0 +1,12 @@
+{% assign image = page.image %}
+{% unless image %}
+  {% capture image %}/assets/images/randombg/{{site.random_background | sample}}.jpg{% endcapture %}
+{% endunless %}
+
+<header class="post-header" style="background-image: url('{{image}}');">
+  {% if page.logo %}
+    <h1><img src="{{page.logo}}" style="max-width: 20rem;" alt="{{page.title | escape}}" /></h1>
+  {% else %}
+    <h1 class="display-3" itemprop="name headline">{{page.title | escape}}</h1>
+  {% endif %}
+</header>

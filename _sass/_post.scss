@@ -1,114 +1,12 @@
-.post-navigation {
-	.previous,
-	.next {
-		position: fixed;
-		width: 40px;
-		height: 40px;
-		top: 50%;
-		margin-top: -(40px / 2);
-		line-height: 40px;
-		text-align: center;
-		color: #ddd;
-		font-size: 2em;
-		&:hover {
-			text-decoration: none;
-			background: #fff url("../img/stripe-bg.png");
-			color: $accentColor;
-		}
-	}
-	.previous {
-		left: 0;
-		@include radius(0 5px 5px 0);
-	}
-	.next {
-		right: 0;
-		width: 40px + 10px; // Accomodate for scroll
-		@include radius(5px 0 0 5px);
-	}
+.post-header {
+  background-size: cover;
+  background-position: top center;
+  text-align: center;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  color: #fff;
 }
-.post {
-	margin: 20px 0;
 
-	header {
-		position: relative;
-		border-top: 1px dashed $dashColor;
-
-		.github-fork {
-			position: absolute;
-			top: 32px;
-			right: 0;
-			display: inline-block;
-			border: 0;
-		}
-
-		.post-date {
-			display: block;
-			width: 108px;
-			margin: -1px 0 10px -20px;
-			padding-left: 10px;
-			background: #fff url("../img/stripe-bg.png") ;
-			font-family: JuraBold, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-			font-weight: bold;
-			line-height: 32px;
-			color: $accentColor;
-			@include radius(2px);
-			//@include transition("width margin .3s ease-in");
-		}
-		.post-tags {
-			position: absolute;
-			top: 0;
-			right: 5px;
-			list-style: none;
-			li {
-				display: inline-block;
-				a {
-					display: block;
-					margin: 5px 0 0 0;
-					padding: 5px;
-					background: #fff;
-					color: #ddd;
-					font-size: 12px;
-					line-height: 12px;
-					@include radius(8px);
-					//@include transition(color .3s ease-in);
-
-					&:hover {
-						color: $accentColor;
-						text-decoration: none;
-					}
-				}
-			}
-		}
-	}
-	.body {
-		padding: 0 20px 0 0;
-		max-width: 600px;
-	}
-	footer {
-		@include clearfix();
-		margin: 10px 0;
-
-		.comments-link {
-			float: right;
-			border-right: 0;
-		}
-	}
-	&.image-post {
-		header {
-			border-top: 0;
-
-			.post-image {
-				display: block;
-				margin: -1px 0 10px 0;
-			}
-			.post-date {
-				margin-top: 0;
-				margin-bottom: 0;
-				width: auto;
-			}
-		}
-	}
-	.actions {
-		margin: 10px 0;
-	}
+.post-content {
+  position: relative;
 }

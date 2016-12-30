@@ -1,7 +1,7 @@
 ---
-layout: post
-title: Sublime Text 2 - YUI Compressor Plugin
-tags: [sublime-text-2]
+title: Sublime Text - YUI Compressor Plugin
+categories: [develop]
+tags: [sublime-text]
 ---
 #### Could't find a plugin for using the YUI Compressor so I wrote one.
 

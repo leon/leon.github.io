@@ -1,57 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>{{ page.title }} @ Leon Radley</title>
-	<link rel="canonical" href="{{ page.url | remove:'index.html' | strip_slash }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="author" content="{{ site.author }}" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=114" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=72" />
-	<link rel="apple-touch-icon-precomposed" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=57" />
-	<link rel="apple-touch-startup-image" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=640">
-	<link rel="shortcut icon" href="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=32" />
-	<link rel="alternate" type="application/rss+xml" title="Leon Radley's Blog" href="{{ site.url }}/rss.xml" />
-	<link rel="stylesheet" href="{{ root_url }}/css/site.css" />
-	{% for css in page.css %}
-		<link rel="stylesheet" href="{{ css }}" />
-	{% endfor %}
-</head>
-<body>
-	<header class="header">
-		<nav role="main" class="main-nav">
-			<a id="home" class="site" href="/">Leon.Radley.se</a>
-			<ul>
-				{% for link in site.navigation %}
-					{% assign current = nil %}
-					{% if page.url == link.url or page.layout == link.layout %}
-						{% assign active = true %}
-					{% endif %}
-					<li{% if active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>
-				{% endfor %}
-			</ul>
-		</nav>
-		<ul class="social">
-			<li><a class="googleplus" rel="author" href="https://plus.google.com/u/0/108355738990715118624?rel=author" title="Leon Radley @ Google+">Leon Radley @ Google+</a></li>
-			<li><a class="github" href="https://www.github.com/leon" title="Leon Radley @ GitHub">Leon Radley @ GitHub</a></li>
-			<li><a class="twitter" href="http://www.twitter.com/leonradley" title="Leon Radley @ Twitter">Leon Radley @ Twitter</a></li>
-		</ul>
-	</header>
-	<div class="container">
-		<div class="main">
-			{{ content }}
-		</div>
-		<footer class="footer">
-			<small>All content on this site is owned by me, Leon Radley. 2010-{{ site.time | date: '%Y' }}</small>
-			<a class="back-to-top" href="#home" title="Back to top">⇪</a>
-		</footer>
-	</div>
-	{% for js in page.js %}
-		<script type="text/javascript" src="{{ js }}" async></script>
-	{% endfor %}
-	{% include disqus-count.html %}
-	{% include analytics.html %}
-</body>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
 </html>

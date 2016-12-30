@@ -1,7 +1,7 @@
 ---
 title: Sublime Text 2 - rsub
-layout: post
-tags: [sublime-text-2, textmate-2, unix]
+categories: [develop]
+tags: [sublime-text, unix]
 ---
 ## First a little introduction, what is rmate?
 I read the [blog post](http://blog.macromates.com/2011/mate-and-rmate/) about TextMate 2 adding remote editing.

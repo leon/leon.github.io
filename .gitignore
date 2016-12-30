@@ -1,5 +1,4 @@
-.*
-!.gitignore
-_site
-_drafts/
-radley.sublime-workspace
+.sass-cache/
+.jekyll-metadata
+_site/
+node_modules/

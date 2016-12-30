@@ -1,0 +1,15 @@
+.list-icon {
+	@include list-unstyled;
+
+  line-height: 2rem;
+
+  a {
+    display: block;
+  }
+
+  .fa {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    vertical-align: middle;
+  }	
+}

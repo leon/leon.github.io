@@ -1,18 +1,133 @@
-# Jekyll settings
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Build settings
+timezone: Europe/Stockholm
 permalink: /:year/:month/:title/
 markdown: kramdown
-highlighter: rouge
-paginator: true
-exclude: ["bin", "README.md", "LICENSE.md", "Gemfile", "Gemfile.lock"]
+incremental: true
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - .idea/
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .editorconfig
+  - README.md
+  - package.json
+  - Gemfile
+  - Gemfile.lock
+  - yarn.lock
+
+kramdown:
+  toc_levels: 1..2
+
+sass:
+  style: compressed
+
+paginate: 3
+paginate_path: "/page/:num/"
 
 # Site settings
-url: http://leon.radley.se
-title: Leon Radley
-description: "Blog of Leon Radley, professional web developer"
-author: Leon Radley
-simple_search: http://google.com/search
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-# Navigation
-navigation:
-- text: Blog
-  url: /
+title: Leon Radley
+email: leon@radley.se
+description: > # this means to ignore newlines until "baseurl:"
+  Blog of Leon Radley, professional web developer
+baseurl: "" # the subpath of your site, e.g. /blog
+url: http://leon.radley.se # the base hostname & protocol for your site, e.g. http://example.com
+#repository: leon/leon.github.io
+random_background: [0,1,2,3,4,5,6]
+
+# https://github.com/jekyll/jekyll-seo-tagy
+social:
+  name: Leon Radley
+  links:
+    - https://twitter.com/LeonRadley
+    - https://www.facebook.com/leonradley
+    - https://www.linkedin.com/in/LeonRadley
+    - https://plus.google.com/+LeonRadley
+    - https://github.com/leon
+
+author:
+  name: Leon Radley
+  twitter: leonradley
+  github: leon
+
+disqus.shortname: radley
+
+# Main menu
+menu:
+  -
+    title: Blog
+    url: /
+  -
+    title: Labs
+    url: /labs/
+  -
+    title: About
+    url: /about/
+
+collections:
+  post_categories:
+    output: true
+    permalink: /categories/:path/
+
+  post_tags:
+    output: true
+    permalink: /tags/:path/
+
+  labs:
+    output: true
+    permalink: /labs/:path/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Leon Radley
+  -
+    scope:
+      path: ""
+      type: post_categories
+    values:
+      layout: category
+  -
+    scope:
+      path: ""
+      type: post_tags
+    values:
+      layout: tag
+      sitemap: false
+  -
+    scope:
+      path: ""
+      type: labs
+    values:
+      layout: lab

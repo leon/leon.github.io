@@ -1,0 +1,14 @@
+.tag-outline {
+  background-color: transparent;
+
+  $color: #ddd;
+  $color-active: #fff;
+
+  border: 1px solid $color;
+
+  &[href] {
+    @include hover-focus {
+      border-color: $color-active;
+    }
+  }
+}

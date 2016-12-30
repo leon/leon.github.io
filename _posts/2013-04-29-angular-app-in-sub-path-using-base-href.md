@@ -1,6 +1,6 @@
 ---
 title: Angular App in Sub Path using base
-layout: post
+categories: [angular]
 tags: [js, angular]
 ---
 
@@ -19,13 +19,20 @@ It's not one of the most used html tags but it's great. By adding:
 
 to the top of your `<head>` all relative links now are relative to the specified base href.
 
-So a link that would have looked like this `<a href="/admin/survey/{{"{{"}}survey.id{{"}}}}/field/{{"{{"}}field.id{{"}}}}"></a>` can now be shortened to `<a href="./field/{{"{{"}}field.id{{"}}}}"></a>`.
+So a link that would have looked like this
+```html
+<a href="/admin/survey/{{survey.id}}/field/{{field.id}}"></a>
+```
+can now be shortened to
+```html
+<a href="./field/{{field.id}}"></a>
+```
 
 > Notice the period (.) before the `/` this is what makes it relative to the base tag and not the the domain.
 
 And the same goes for all the routes. Something that would before look like this:
 
-```javascript
+```js
 var prefix = '/admin/survey/123/';
 
 .config(function ($routeProvider, $locationProvider) {
@@ -45,7 +52,7 @@ var prefix = '/admin/survey/123/';
 
 Could now be simplified as this.
 
-```javascript
+```js
 .config(function ($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 
@@ -69,7 +76,7 @@ You may ask but how would I get hold of the survey.id or any other survey data.
 
 By creating an Angular constant with the surveyId we can then inject where ever we want.
 
-```javascript
+```js
 <script>
 	// The @survey variable is coming from play via @(survey: Survey)
 	angular.module('app').constant('surveyId', '@survey.id');
@@ -94,7 +101,7 @@ We can then add a main app controller and survey service that loads the survey d
 
 And then the `AppCtrl` and `SurveyService`
 
-```javascript
+```js
 // in SurveyService.js
 angular.module('app').factory('SurveyService', function ($resource) {
 	return $resource('/api/admin/survey/:surveyId', {surveyId: '@id'});

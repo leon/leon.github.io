@@ -1,0 +1,23 @@
+<nav class=""aria-label="Page navigation">
+  <ul class="pagination pagination-lg">
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+        {% capture paginator_previous_url %}{{ site.baseurl }}/{% endcapture %}
+      {% else %}
+        {% capture paginator_previous_url %}{{ site.baseurl }}/page/{{paginator.previous_page}}/{% endcapture %}
+      {% endif %}
+      <li class="page-item">
+        <a class="page-link" href="{{paginator_previous_url}}" aria-label="Newer Posts">
+          <i class="fa fa-chevron-left"></i> Newer Posts
+        </a>
+      </li>
+    {% endif %}
+    {% if paginator.next_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ site.baseurl }}/page/{{paginator.next_page}}/" aria-label="Older Posts">
+          Older Posts <i class="fa fa-chevron-right"></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

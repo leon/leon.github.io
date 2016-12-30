@@ -1,6 +1,6 @@
 ---
-layout: post
 title: JSON Action Composition
+categories: [play]
 tags: [play]
 ---
 
