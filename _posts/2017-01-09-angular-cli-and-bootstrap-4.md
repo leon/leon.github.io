@@ -2,7 +2,7 @@
 title: Angular CLI and Bootstrap 4 - The Ultimate Setup
 layout: post
 categories: [angular]
-tags: [angular, angular-cli]
+tags: [angular, angular-cli, font-awesome]
 github: https://github.com/leon/blog-angular-cli-bootstrap-font-awesome
 ---
 
