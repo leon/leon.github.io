@@ -19,10 +19,8 @@ cd myapp
 yarn
 ```
 
-This will install a new app using sass as it's css compiler.
-
 > **Note**
-> I'm assuming you know how to install the latest of [yarn](https://yarnpkg.com/en/docs/install) and [angular-cli](https://github.com/angular/angular-cli#installation)
+> I'm assuming you installed the latest [yarn](https://yarnpkg.com/en/docs/install) and [angular-cli](https://github.com/angular/angular-cli#installation)
 
 Next we'll want to add bootstrap 4 and font-awesome
 
@@ -32,11 +30,10 @@ yarn add font-awesome
 ```
 
 ### Setup bootstrap and app styles
-By default angular-cli adds a styles.scss files in the `src` folder, but since we are going to have multiple `scss` files we'll create `src/styles`
-We will also want to split our vendor styles into it's own file. That way webpack won't have to work as hard regenerating bootstrap's scss files on every change.
-So we should have two entry point `scss` files, `vendor.scss` and `main.scss`
+By default angular-cli adds a `styles.scss` file in the `src` folder, but since we are going to have multiple `scss` files we'll create a folder named `src/styles/`
+We'll also want to split our vendor styles into it's own file. That way webpack won't have to work as hard regenerating bootstrap's scss files on every change.
 
-in `angular-cli.json` change the `styles` to:
+In `angular-cli.json` change `styles` to be an array with two paths:
 
 ```json
 "styles": [
@@ -45,10 +42,9 @@ in `angular-cli.json` change the `styles` to:
 ],
 ```
 
-We are now going to start of with creating `src/styles/vendor.scss`. We now want to include all of bootstrap but be able to selectively exclude modules.
-navigate to `node_modules/bootstrap/scss/bootstrap.scss` and copy the contents of that file to your `vendor.scss`.
+Lets start by creating `src/styles/vendor.scss`. Vavigate to `node_modules/bootstrap/scss/bootstrap.scss` and copy the contents of that file to your `vendor.scss`.
 
-We now need to change all the paths to point to `node_modules`. Sass has a shortcut for that
+We now need to change all the paths to point to `node_modules`. Sass has a shortcut for that:
 
 ```scss
 @import "reboot";
@@ -56,9 +52,9 @@ We now need to change all the paths to point to `node_modules`. Sass has a short
 @import "~bootstrap/scss/reboot";
 ```
 
-At the top of the bootstrap imports are the bootstrap variables and mixins. By having our own variables file import at the beginning of the file, we will be able to override any bootstrap variable.
+At the top of the bootstrap imports we have variables and mixins. By having our own variables file imported at the beginning of the file, we will be able to override any bootstrap variable.
 
-Add a file `src/styles/_variables.scss` and add it as an import at the top of `vendor.scss`
+Add `src/styles/_variables.scss` and add it as an import at the top of `vendor.scss`
 
 ```scss
 @import "variables";
@@ -67,7 +63,8 @@ Add a file `src/styles/_variables.scss` and add it as an import at the top of `v
 To see all available variables navigate to `node_modules/bootstrap/scss/_variables.scss`
 
 We are now set for bootstrap development.
-You can start with enabling a few of the modules, and as time goes by you might want to include more and more. But by doing it this way you won't include more of bootstrap than you are using.
+
+Start with enabling a few of the modules, and as time goes by you might want to include more and more. But by doing it this way you won't include more of bootstrap than you are using.
 
 ## Font Awesome
 The same process goes for including `font-awesome` in your build.
