@@ -1,10 +1,11 @@
 ---
 title: How to loop over multiple tr's with *ngFor
 layout: post
-tags: [angular2, js]
+categories: [angular]
+tags: [angular, js]
 ---
 
-I came across wanting to create a component in angular 2 that should display an edit section underneath a table row.
+#### I came across wanting to create a component in angular 2 that should display an edit section underneath a table row.
 
 But because `*ngFor` only supports creating one element I hit a wall.
 
@@ -12,7 +13,7 @@ After some digging I found that by destructuring `*ngFor` into it's standalone a
 
 ```ts
 
-import {Component, Input, Output, ChangeDetectionStrategy, EventEmitter} from 'angular2/core';
+import { Component, Input, Output, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 
 interface Asset {
   id: number;
@@ -83,6 +84,5 @@ export class AssetsComponent {
     return asset.id;
   }
 }
-
 
 ```

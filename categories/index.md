@@ -19,7 +19,7 @@ title: Categories
           {% endunless %}
           <img class="card-img img-fluid" src="{{image}}" alt="{{category.title}}">
           <div class="card-img-overlay">
-            <h3 class="card-title mt-3 text-xs-center">{{category.title | escape}}</h3>
+            <h3 class="card-title mt-3 text-center">{{category.title | escape}}</h3>
           </div>
         </a>
       </div>

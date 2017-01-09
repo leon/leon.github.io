@@ -8,14 +8,14 @@
     {% assign category = category[0] %}
     
     {% if category %}
-      <h3><a class="tag tag-outline" href="{{category.url}}">{{category.title}}</a></h3>
+      <h3><a class="badge badge-outline" href="{{category.url}}">{{category.title}}</a></h3>
     {% endif %}
 
     {% if page.tags.size > 0 %}
       <ul class="post-tags list-inline">
         {% for tag in page.tags %}
           <li class="list-inline-item">
-            <a class="tag tag-default" href="/tags/{{tag}}/">{{tag}}</a>
+            <a class="badge badge-default" href="/tags/{{tag}}/">{{tag}}</a>
           </li>
         {% endfor %}
       </ul>

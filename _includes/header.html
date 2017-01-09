@@ -1,20 +1,16 @@
 <header class="site-header" role="banner">
 
-  <nav class="navbar navbar-full">
-    <a class="navbar-brand" href="{{ "/" | relative_url}}"><img src="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=50" />{{ site.title | escape }}</a>
+  <nav class="navbar navbar-inverse bg-transparent navbar-toggleable">
+    <a class="navbar-brand mr-auto" href="{{ "/" | relative_url}}"><img src="http://www.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31.png?s=50" />{{ site.title | escape }}</a>
 
-    <ul class="nav navbar-nav float-sm-right">
+    <div class="navbar-nav hidden-xs-down">
       {% for menu_item in site.menu %}
-        <li class="nav-item"><a class="nav-link" href="{{menu_item.url}}">{{menu_item.title}}</a></li>
+        <a class="nav-item nav-link" href="{{menu_item.url}}">{{menu_item.title}}</a>
       {% endfor %}
 
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/leon" target="_blank"><i class="fa fa-github"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://twitter.com/leonradley" target="_blank"><i class="fa fa-twitter"></i></a>
-      </li>
-    <ul>
+      <a class="nav-item nav-link" href="https://github.com/leon" target="_blank"><i class="fa fa-github"></i></a>
+      <a class="nav-item nav-link" href="https://twitter.com/leonradley" target="_blank"><i class="fa fa-twitter"></i></a>
+    <div>
   </nav>
 
 </header>

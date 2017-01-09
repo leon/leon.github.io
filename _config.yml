@@ -75,15 +75,15 @@ disqus.shortname: radley
 
 # Main menu
 menu:
-  -
-    title: Blog
-    url: /
-  -
-    title: Labs
-    url: /labs/
-  -
-    title: About
-    url: /about/
+#  -
+#    title: Blog
+#    url: /
+#  -
+#    title: Labs
+#    url: /labs/
+#  -
+#    title: About
+#    url: /about/
 
 collections:
   post_categories:

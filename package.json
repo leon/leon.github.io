@@ -6,10 +6,10 @@
   "license": "MIT",
   "scripts": {
     "prestart": "cp node_modules/font-awesome/fonts/* assets/fonts",
-    "start": "bundle exec jekyll serve --livereload"
+    "start": "bundle exec jekyll serve --incremental --livereload"
   },
   "dependencies": {
-    "bootstrap": "next",
+    "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "^4.7.0"
   }
 }
