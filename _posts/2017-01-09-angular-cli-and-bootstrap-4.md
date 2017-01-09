@@ -42,7 +42,7 @@ In `angular-cli.json` change `styles` to be an array with two paths:
 ],
 ```
 
-Lets start by creating `src/styles/vendor.scss`. Vavigate to `node_modules/bootstrap/scss/bootstrap.scss` and copy the contents of that file to your `vendor.scss`.
+Lets start by creating `src/styles/vendor.scss`. Navigate to `node_modules/bootstrap/scss/bootstrap.scss` and copy the contents of that file to your `vendor.scss`.
 
 We now need to change all the paths to point to `node_modules`. Sass has a shortcut for that:
 
