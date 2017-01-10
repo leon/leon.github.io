@@ -1,21 +1,28 @@
-<header class="post-header" style="background-image: url('{% if page.image %}{{page.image}}{% else %}/assets/images/randombg/{{site.random_background | sample}}.jpg{% endif %}');">
+{% if page.image %}
+  {% assign image = page.image %}
+{% else %}
+  {% capture image %}/assets/images/randombg/{{ site.random_background | sample }}.jpg{% endcapture %}
+{% endif %}
+<header class="post-header" style="background-image: url('{{ image }}');">
+  <img class="sr-only" src="{{ image }}" alt="{{ page.title | escape }} - Image" itemprop="image" />
   <h1 class="display-3" itemprop="name headline">{{ page.title | escape }}</h1>
   <p class="post-meta">
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished"><i class="fa fa-clock-o"></i> {{ page.date | date: "%Y-%m-%d" }}</time>
+    <span class="sr-only" itemprop="author">/about/</span>
+    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" itemprop="dateModified"><i class="fa fa-clock-o"></i> {{ page.date | date: "%Y-%m-%d" }}</time>
     
     {% assign main_category = page.categories[0] %}
     {% assign category = site.post_categories | where: "slug", main_category %}
     {% assign category = category[0] %}
     
     {% if category %}
-      <h3><a class="badge badge-outline" href="{{category.url}}">{{category.title}}</a></h3>
+      <h3><a class="badge badge-outline" href="{{ category.url }}" itemprop="articleSection">{{ category.title }}</a></h3>
     {% endif %}
 
     {% if page.tags.size > 0 %}
       <ul class="post-tags list-inline">
         {% for tag in page.tags %}
           <li class="list-inline-item">
-            <a class="badge badge-default" href="/tags/{{tag}}/">{{tag}}</a>
+            <a class="badge badge-default" href="/tags/{{ tag }}/" itemprop="keywords">{{ tag }}</a>
           </li>
         {% endfor %}
       </ul>
