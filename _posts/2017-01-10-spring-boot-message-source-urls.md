@@ -26,6 +26,7 @@ We now create a `application-prod.yml` file which will hold all our configuratio
 We override `basename` so that it points at `urls-prod`.
 
 application-prod.yml:
+
 ```
 spring.messages.basename=messages,urls-prod
 ```
@@ -33,6 +34,7 @@ spring.messages.basename=messages,urls-prod
 ### Url properties file layout
 
 urls.properties:
+
 ```
 site.url = http://www.myapp.dev
 site.disclaimer = http://www.myapp.dev/disclaimer
@@ -42,6 +44,7 @@ portal.account = http://portal.myapp.dev/account
 ```
 
 urls_sv.properties:
+
 ```
 portal.account = http://portal.myapp.dev/konto
 ```
@@ -49,6 +52,7 @@ portal.account = http://portal.myapp.dev/konto
 And for the `prod` profile we change to the production urls
 
 urls-prod.properties:
+
 ```
 site.url = https://www.myapp.com
 site.disclaimer = https://www.myapp.com/disclaimer
@@ -58,6 +62,7 @@ portal.account = https://portal.myapp.com/account
 ```
 
 urls-prod_sv.properties:
+
 ```
 portal.account = https://portal.myapp.com/konto
 ```
