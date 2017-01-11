@@ -6,7 +6,7 @@ tags: [spring]
 
 #### Handling multiple environments, Locales and urls can be tricky. Here I'll show you a trick on how to get things organized.
 
-Spring boot comes with a predefined `MessageSource` that you can `@Autowire` into any component.
+Spring boot comes with a predefined `MessageSource` that you can inject into any component.
 
 For this example we are going to start by changing the default config to also include a urls resource bundle.
 
