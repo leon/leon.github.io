@@ -10,11 +10,13 @@ Spring boot comes with a predefined `MessageSource` that you can inject into any
 
 For this example we are going to start by changing the default config to also include a urls resource bundle.
 
-open `application.yml` and adding
-```yml
+edit application.yml: 
+```yaml
 spring.messages.basename=messages,urls
 ```
+
 This will load messages both from
+
 * messages.properties
 * urls.properties
 
@@ -22,8 +24,9 @@ This will load messages both from
 We now create a `application-prod.yml` file which will hold all our configurations for the `prod` profile.
 
 We override `basename` so that it points at `urls-prod`.
+
 application-prod.yml:
-```yml
+```yaml
 spring.messages.basename=messages,urls-prod
 ```
 
