@@ -11,7 +11,7 @@ Spring boot comes with a predefined `MessageSource` that you can inject into any
 For this example we are going to start by changing the default config to also include a urls resource bundle.
 
 edit application.yml: 
-```yaml
+```
 spring.messages.basename=messages,urls
 ```
 
@@ -26,39 +26,39 @@ We now create a `application-prod.yml` file which will hold all our configuratio
 We override `basename` so that it points at `urls-prod`.
 
 application-prod.yml:
-```yaml
+```
 spring.messages.basename=messages,urls-prod
 ```
 
 ### Url properties file layout
 
 urls.properties:
-```properties
+```
 site.url = http://www.myapp.dev
 site.disclaimer = http://www.myapp.dev/disclaimer
 
 portal.url = http://portal.myapp.dev
 portal.account = http://portal.myapp.dev/account
-
 ```
 
 urls_sv.properties:
-```properties
+```
 portal.account = http://portal.myapp.dev/konto
 ```
 
 And for the `prod` profile we change to the production urls
 
 urls-prod.properties:
-```properties
+```
 site.url = https://www.myapp.com
 site.disclaimer = https://www.myapp.com/disclaimer
 
 portal.url = https://portal.myapp.com
 portal.account = https://portal.myapp.com/account
 ```
+
 urls-prod_sv.properties:
-```properties
+```
 portal.account = https://portal.myapp.com/konto
 ```
 
@@ -75,37 +75,37 @@ import org.springframework.stereotype.Service;
 @Service
 public class UrlProperties {
 
-	private final MessageSource messageSource;
+    private final MessageSource messageSource;
 
-	private final SiteUrls site;
-	private final PortalUrls portal;
+    private final SiteUrls site;
+    private final PortalUrls portal;
 
-	@Autowired
-	public UrlProperties(MessageSource messageSource) {
-		this.messageSource = messageSource;
+    @Autowired
+    public UrlProperties(MessageSource messageSource) {
+        this.messageSource = messageSource;
 
-		this.site = new SiteUrls();
-		this.portal = new PortalUrls();
-	}
-	
+        this.site = new SiteUrls();
+        this.portal = new PortalUrls();
+    }
+    
   public SiteUrls getSite() {
     return site;
   }
 
-	public PortalUrls getPortal() {
-		return portal;
-	}
+    public PortalUrls getPortal() {
+        return portal;
+    }
 
   /**
    * Helper to get correct message from messageSource
    * There could of course be more advanced getters with parameters that pass them on to the getMessage
    * There could also be a version where you pass in the locale
    */
-	private String get(String key) {
-		return messageSource.getMessage(key, null, LocaleContextHolder.getLocaleContext().getLocale());
-	}
-	
-	public class SiteUrls {
+    private String get(String key) {
+        return messageSource.getMessage(key, null, LocaleContextHolder.getLocaleContext().getLocale());
+    }
+    
+    public class SiteUrls {
     public String getUrl() {
       return get("site.url");
     }
@@ -115,15 +115,15 @@ public class UrlProperties {
     }
   }
 
-	public class PortalUrls {
-		public String getUrl() {
-			return get("portal.url");
-		}
+    public class PortalUrls {
+        public String getUrl() {
+            return get("portal.url");
+        }
 
-		public String getSignup() {
-			return get("portal.account");
-		}
-	}
+        public String getSignup() {
+            return get("portal.account");
+        }
+    }
 
 }
 ```
